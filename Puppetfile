@@ -1,4 +1,4 @@
-# the account where the opensack modules should come from
+# the account where the Openstack modules should come from
 #
 # this file also accepts a few environment variables
 #
@@ -6,7 +6,7 @@ git_protocol=ENV['git_protocol'] || 'git'
 
 #
 # this modulefile has been configured to use two sets of repos.
-# The downstream repos that cisco has forked, or the upstream repos
+# The downstream repos that Cisco has forked, or the upstream repos
 # that they are derived from (and should be maintained in sync with)
 #
 
@@ -17,17 +17,17 @@ git_protocol=ENV['git_protocol'] || 'git'
 # work yet
 #
 
-#if ENV['repos_to_use']  == 'upstream'
+if ENV['repos_to_use']  == 'upstream'
   # use the upstream modules where they exist
   branch_name              = 'origin/grizzly'
   openstack_module_branch  = 'master'
   openstack_module_account = 'stackforge'
-#else
-#  # this assumes downstream which is the cisco branches
-#  branch_name              = 'origin/grizzly'
-#  openstack_module_branch  = branch_name
-#  openstack_module_account = 'CiscoSystems'
-#end
+else
+  # this assumes downstream which is the Cisco branches
+  branch_name              = 'origin/grizzly'
+  openstack_module_branch  = branch_name
+  openstack_module_account = 'CiscoSystems'
+end
 
 base_url = "#{git_protocol}://github.com"
 
@@ -48,7 +48,7 @@ mod 'stackforge/quantum',   :git => "#{openstack_repo_prefix}-quantum",   :ref =
 mod 'stackforge/swift',     :git => "#{openstack_repo_prefix}-swift",     :ref => openstack_module_branch
 
 #
-# the rest of the modules just come straight from their respective cisco branches atm
+# the rest of the modules just come straight from their respective Cisco branches at the moment.
 #
 
 #
