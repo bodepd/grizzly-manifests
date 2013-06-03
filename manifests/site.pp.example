@@ -132,6 +132,13 @@ $sql_connection 	 = "mysql://${nova_user}:${nova_db_password}@${controller_node_
 # glance backend configuration, supports file or swift
 $glance_backend = 'file'
 
+########### Test variables ############
+# variables used to populate test script:
+# /tmp/test_nova.sh
+#
+# image to use for tests. Accepts kvm or cirros
+$test_file_image_type = 'kvm'
+
 #### end shared variables #################
 
 # Storage Configuration
