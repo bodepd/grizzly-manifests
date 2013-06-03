@@ -137,6 +137,11 @@ $rabbit_user             = 'openstack_rabbit_user'
 $sql_connection 	 = "mysql://${nova_user}:${nova_db_password}@${controller_node_address}/nova"
 # glance backend configuration, supports file or swift
 $glance_backend = 'file'
+# image type to use for testing
+# this populates the contents of the /tmp/nova_test.sh script
+# that is deployed to the controller.
+# It accepts kvm or cirros
+$test_file_image_type = 'kvm'
 
 #### end shared variables #################
 
